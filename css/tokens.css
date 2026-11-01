@@ -1,0 +1,77 @@
+/* Design kit de KHAOS — valores base (tokens).
+   No escribas colores, tamaños ni espacios sueltos en otros archivos:
+   todo componente debe usar SOLO estas variables. */
+
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+:root {
+  /* Colores — paleta oficial de marca */
+  --color-primario: #BA1200;
+  --color-primario-tinte: #F6DEDB;
+  --color-secundario: #508AA8;
+  --color-secundario-vivo: #9DD1F1;
+  --color-secundario-claro: #C8E0F4;
+  --color-marino: #031927;
+  --color-negro: #0A0A0A;
+  --color-fondo: #F5F4F1;
+  --color-blanco: #FFFFFF;
+
+  /* Colores — escala de grises (bordes y placeholders) */
+  --color-gris-claro: #EEEEEE;
+  --color-gris-medio: #E5E5E5;
+  --color-borde: #CCCCCC;
+
+  /* Colores — escala de grises (texto secundario) */
+  --color-texto-suave: #333333;
+  --color-texto-apoyo: #666666;
+  --color-texto-placeholder: #999999;
+
+  /* Colores de estado */
+  --color-exito: var(--color-secundario-claro);
+  --color-error: var(--color-primario);
+
+  /* Tipografía */
+  --fuente-titulos: 'Archivo Black', sans-serif;
+  --fuente-texto: 'Space Grotesk', sans-serif;
+  --fuente-texto-respaldo: Arial, sans-serif;
+
+  --texto-micro: 9px;
+  --texto-xs: 10px;
+  --texto-sm: 11px;
+  --texto-base: 12px;
+  --texto-md: 13px;
+  --texto-lg: 14px;
+  --texto-xl: 16px;
+  --texto-2xl: 20px;
+  --texto-icono: 22px;
+  --titulo: 26px;
+
+  --peso-normal: 400;
+  --peso-fuerte: 700;
+
+  /* Espacios — escala ajustada (separaciones cortas) */
+  --espacio-ajustado-1: 6px;
+  --espacio-ajustado-2: 10px;
+  --espacio-ajustado-3: 14px;
+
+  /* Espacios — escala base (múltiplos de 4) */
+  --espacio-1: 4px;
+  --espacio-2: 8px;
+  --espacio-3: 12px;
+  --espacio-4: 16px;
+  --espacio-5: 20px;
+  --espacio-6: 24px;
+  --espacio-7: 28px;
+  --espacio-8: 32px;
+  --espacio-10: 40px;
+  --espacio-pantalla-v: 48px;
+  --espacio-pantalla-h: 56px;
+
+  /* Bordes y radios */
+  --radio-sm: 4px;
+  --radio-md: 10px;
+  --radio-lg: 14px;
+  --radio-pill: 20px;
+  --radio-pantalla: 26px;
+  --radio-bisel: 36px;
+}

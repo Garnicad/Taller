@@ -1,0 +1,181 @@
+/* Design kit de KHAOS — componentes.
+   Cada regla usa SOLO variables de tokens.css (importa tokens.css antes de este archivo).
+   Los 7 componentes oficiales encontrados en los 15 diseños (ver auditoria-design-kit.md, filas 38-44). */
+
+/* 1. Marco de teléfono (bisel + pantalla interna) */
+
+.marco-telefono {
+  width: 340px;
+  height: 620px;
+  background: var(--color-negro);
+  border-radius: var(--radio-bisel);
+  padding: var(--espacio-2);
+  box-sizing: border-box;
+}
+
+.marco-telefono__pantalla {
+  width: 100%;
+  height: 100%;
+  background: var(--color-blanco);
+  border-radius: var(--radio-pantalla);
+  overflow: hidden;
+  font-family: var(--fuente-texto), var(--fuente-texto-respaldo);
+  display: flex;
+  flex-direction: column;
+}
+
+/* 2. Barra superior "KHAOS" */
+
+.barra-superior {
+  width: 100%;
+  padding: var(--espacio-3) var(--espacio-4);
+  background: var(--color-marino);
+  color: var(--color-blanco);
+  font-family: var(--fuente-titulos);
+  font-size: var(--texto-sm);
+  letter-spacing: 0.08em;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+/* 3. Chip ANTES / DESPUÉS */
+
+.chip {
+  display: inline-block;
+  padding: var(--espacio-ajustado-1) var(--espacio-3);
+  border-radius: var(--radio-pill);
+  font-family: var(--fuente-texto);
+  font-weight: var(--peso-fuerte);
+  font-size: var(--texto-sm);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.chip--antes {
+  background: var(--color-primario-tinte);
+  color: var(--color-primario);
+}
+
+.chip--despues {
+  background: var(--color-secundario-claro);
+  color: var(--color-secundario);
+}
+
+/* 4. Encabezado de pantalla (eyebrow + título) */
+
+.encabezado-pantalla {
+  padding: var(--espacio-pantalla-v) var(--espacio-pantalla-h) var(--espacio-4);
+}
+
+.encabezado-pantalla__eyebrow {
+  margin: 0 0 var(--espacio-2) 0;
+  font-family: var(--fuente-texto);
+  font-weight: var(--peso-fuerte);
+  font-size: var(--texto-sm);
+  color: var(--color-secundario-vivo);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.encabezado-pantalla__titulo {
+  margin: 0;
+  font-family: var(--fuente-titulos);
+  font-size: var(--titulo);
+  color: var(--color-marino);
+  line-height: 1.15;
+}
+
+/* 5. Pie de comparación (texto explicativo bajo cada teléfono) */
+
+.pie-comparacion {
+  margin-top: var(--espacio-4);
+  max-width: 340px;
+  font-family: var(--fuente-texto);
+  font-size: var(--texto-md);
+  color: var(--color-texto-suave);
+  line-height: 1.4;
+  text-align: center;
+}
+
+/* 6. Botón tipo píldora */
+
+.boton {
+  display: inline-block;
+  padding: var(--espacio-3) var(--espacio-6);
+  border-radius: var(--radio-pill);
+  border: none;
+  font-family: var(--fuente-texto);
+  font-weight: var(--peso-fuerte);
+  font-size: var(--texto-md);
+  background: var(--color-secundario);
+  color: var(--color-blanco);
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.boton:hover {
+  background: var(--color-marino);
+}
+
+.boton:focus-visible {
+  outline: 2px solid var(--color-secundario-vivo);
+  outline-offset: 2px;
+}
+
+.boton:disabled {
+  background: var(--color-gris-medio);
+  color: var(--color-texto-placeholder);
+  cursor: not-allowed;
+}
+
+.boton--secundario {
+  background: transparent;
+  color: var(--color-secundario);
+  border: 1px solid var(--color-borde);
+}
+
+.boton--secundario:hover {
+  background: var(--color-gris-claro);
+  color: var(--color-marino);
+}
+
+.boton--secundario:disabled {
+  background: transparent;
+  color: var(--color-texto-placeholder);
+  border-color: var(--color-gris-claro);
+}
+
+/* 7. Tarjeta de contenido */
+
+.tarjeta {
+  background: var(--color-fondo);
+  border-radius: var(--radio-md);
+  padding: var(--espacio-4);
+  box-sizing: border-box;
+}
+
+.tarjeta__titulo {
+  margin: 0 0 var(--espacio-2) 0;
+  font-family: var(--fuente-texto);
+  font-weight: var(--peso-fuerte);
+  font-size: var(--texto-xl);
+  color: var(--color-marino);
+}
+
+.tarjeta__texto {
+  margin: 0;
+  font-family: var(--fuente-texto);
+  font-size: var(--texto-base);
+  color: var(--color-texto-suave);
+  line-height: 1.4;
+}
+
+/* Consideración mobile: a 375px de ancho, marco-telefono y tarjeta usan
+   padding y font-size en variables (no px sueltos), así que se achican
+   de forma proporcional sin reglas extra. */
+@media (max-width: 375px) {
+  .marco-telefono {
+    width: 100%;
+    max-width: 340px;
+  }
+}

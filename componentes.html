@@ -1,0 +1,287 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>KHAOS — Design kit</title>
+<link rel="stylesheet" href="css/tokens.css">
+<link rel="stylesheet" href="css/components.css">
+<style>
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    padding: var(--espacio-8) var(--espacio-6);
+    background: var(--color-fondo);
+    font-family: var(--fuente-texto), var(--fuente-texto-respaldo);
+    color: var(--color-marino);
+  }
+  h1 {
+    font-family: var(--fuente-titulos);
+    font-size: var(--titulo);
+    margin: 0 0 var(--espacio-2) 0;
+  }
+  .intro {
+    font-size: var(--texto-md);
+    color: var(--color-texto-suave);
+    max-width: 640px;
+    margin: 0 0 var(--espacio-8) 0;
+    line-height: 1.5;
+  }
+  section {
+    margin-bottom: var(--espacio-10);
+  }
+  h2 {
+    font-family: var(--fuente-titulos);
+    font-size: var(--texto-2xl);
+    border-bottom: 2px solid var(--color-negro);
+    padding-bottom: var(--espacio-2);
+    margin: 0 0 var(--espacio-5) 0;
+  }
+  h3 {
+    font-family: var(--fuente-texto);
+    font-weight: var(--peso-fuerte);
+    font-size: var(--texto-lg);
+    margin: var(--espacio-6) 0 var(--espacio-3) 0;
+    color: var(--color-texto-suave);
+  }
+
+  /* Swatches de color */
+  .paleta {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: var(--espacio-4);
+  }
+  .swatch {
+    background: var(--color-blanco);
+    border-radius: var(--radio-md);
+    overflow: hidden;
+    border: 1px solid var(--color-gris-medio);
+  }
+  .swatch__color {
+    height: 64px;
+  }
+  .swatch__info {
+    padding: var(--espacio-2) var(--espacio-3);
+  }
+  .swatch__nombre {
+    display: block;
+    font-size: var(--texto-sm);
+    font-weight: var(--peso-fuerte);
+    font-family: monospace;
+  }
+  .swatch__valor {
+    display: block;
+    font-size: var(--texto-sm);
+    color: var(--color-texto-apoyo);
+    font-family: monospace;
+  }
+
+  /* Escala tipográfica */
+  .escala-tipo {
+    display: flex;
+    flex-direction: column;
+    gap: var(--espacio-3);
+  }
+  .escala-tipo__fila {
+    display: flex;
+    align-items: baseline;
+    gap: var(--espacio-4);
+  }
+  .escala-tipo__etiqueta {
+    width: 170px;
+    flex-shrink: 0;
+    font-family: monospace;
+    font-size: var(--texto-sm);
+    color: var(--color-texto-apoyo);
+  }
+  .escala-tipo__ejemplo {
+    font-family: var(--fuente-texto);
+  }
+
+  /* Bloques de demo de componentes */
+  .demo {
+    background: var(--color-blanco);
+    border: 1px solid var(--color-gris-medio);
+    border-radius: var(--radio-md);
+    padding: var(--espacio-5);
+    margin-bottom: var(--espacio-4);
+  }
+  .demo__muestra {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--espacio-4);
+    margin-bottom: var(--espacio-4);
+  }
+  .demo__codigo {
+    background: var(--color-marino);
+    color: var(--color-secundario-claro);
+    font-family: monospace;
+    font-size: var(--texto-sm);
+    padding: var(--espacio-3);
+    border-radius: var(--radio-sm);
+    overflow-x: auto;
+    white-space: pre;
+    margin: 0;
+  }
+
+  /* Demo específica del marco de teléfono: versión reducida para que
+     quepa cómoda en el catálogo sin perder proporción. */
+  .demo--telefono .marco-telefono {
+    transform: scale(0.6);
+    transform-origin: top left;
+    margin-bottom: -248px;
+  }
+</style>
+</head>
+<body>
+
+<h1>KHAOS — Design kit</h1>
+<p class="intro">
+  Catálogo visual de los tokens y componentes oficiales del proyecto KHAOS.
+  Esta página enlaza <code>css/tokens.css</code> y <code>css/components.css</code>:
+  cualquier componente nuevo de la app debe usar solo lo que aquí aparece.
+  Si necesitas algo que no está, se agrega primero aquí (ver CLAUDE.md).
+</p>
+
+<section>
+  <h2>Colores</h2>
+  <h3>Paleta de marca</h3>
+  <div class="paleta">
+    <div class="swatch"><div class="swatch__color" style="background:var(--color-primario)"></div><div class="swatch__info"><span class="swatch__nombre">--color-primario</span><span class="swatch__valor">#BA1200</span></div></div>
+    <div class="swatch"><div class="swatch__color" style="background:var(--color-primario-tinte)"></div><div class="swatch__info"><span class="swatch__nombre">--color-primario-tinte</span><span class="swatch__valor">#F6DEDB</span></div></div>
+    <div class="swatch"><div class="swatch__color" style="background:var(--color-secundario)"></div><div class="swatch__info"><span class="swatch__nombre">--color-secundario</span><span class="swatch__valor">#508AA8</span></div></div>
+    <div class="swatch"><div class="swatch__color" style="background:var(--color-secundario-vivo)"></div><div class="swatch__info"><span class="swatch__nombre">--color-secundario-vivo</span><span class="swatch__valor">#9DD1F1</span></div></div>
+    <div class="swatch"><div class="swatch__color" style="background:var(--color-secundario-claro)"></div><div class="swatch__info"><span class="swatch__nombre">--color-secundario-claro</span><span class="swatch__valor">#C8E0F4</span></div></div>
+    <div class="swatch"><div class="swatch__color" style="background:var(--color-marino)"></div><div class="swatch__info"><span class="swatch__nombre">--color-marino</span><span class="swatch__valor">#031927</span></div></div>
+    <div class="swatch"><div class="swatch__color" style="background:var(--color-negro)"></div><div class="swatch__info"><span class="swatch__nombre">--color-negro</span><span class="swatch__valor">#0A0A0A</span></div></div>
+    <div class="swatch"><div class="swatch__color" style="background:var(--color-fondo)"></div><div class="swatch__info"><span class="swatch__nombre">--color-fondo</span><span class="swatch__valor">#F5F4F1</span></div></div>
+    <div class="swatch"><div class="swatch__color" style="background:var(--color-blanco)"></div><div class="swatch__info"><span class="swatch__nombre">--color-blanco</span><span class="swatch__valor">#FFFFFF</span></div></div>
+  </div>
+  <h3>Escala de grises</h3>
+  <div class="paleta">
+    <div class="swatch"><div class="swatch__color" style="background:var(--color-gris-claro)"></div><div class="swatch__info"><span class="swatch__nombre">--color-gris-claro</span><span class="swatch__valor">#EEEEEE</span></div></div>
+    <div class="swatch"><div class="swatch__color" style="background:var(--color-gris-medio)"></div><div class="swatch__info"><span class="swatch__nombre">--color-gris-medio</span><span class="swatch__valor">#E5E5E5</span></div></div>
+    <div class="swatch"><div class="swatch__color" style="background:var(--color-borde)"></div><div class="swatch__info"><span class="swatch__nombre">--color-borde</span><span class="swatch__valor">#CCCCCC</span></div></div>
+    <div class="swatch"><div class="swatch__color" style="background:var(--color-texto-suave)"></div><div class="swatch__info"><span class="swatch__nombre">--color-texto-suave</span><span class="swatch__valor">#333333</span></div></div>
+    <div class="swatch"><div class="swatch__color" style="background:var(--color-texto-apoyo)"></div><div class="swatch__info"><span class="swatch__nombre">--color-texto-apoyo</span><span class="swatch__valor">#666666</span></div></div>
+    <div class="swatch"><div class="swatch__color" style="background:var(--color-texto-placeholder)"></div><div class="swatch__info"><span class="swatch__nombre">--color-texto-placeholder</span><span class="swatch__valor">#999999</span></div></div>
+  </div>
+</section>
+
+<section>
+  <h2>Tipografía</h2>
+  <p class="intro" style="margin-bottom: var(--espacio-4)">
+    Títulos: <strong style="font-family: var(--fuente-titulos)">Archivo Black</strong>.
+    Todo lo demás: <strong style="font-family: var(--fuente-texto)">Space Grotesk</strong>.
+  </p>
+  <div class="escala-tipo">
+    <div class="escala-tipo__fila"><span class="escala-tipo__etiqueta">--texto-micro (9px)</span><span class="escala-tipo__ejemplo" style="font-size:var(--texto-micro)">KHAOS define no one</span></div>
+    <div class="escala-tipo__fila"><span class="escala-tipo__etiqueta">--texto-xs (10px)</span><span class="escala-tipo__ejemplo" style="font-size:var(--texto-xs)">KHAOS define no one</span></div>
+    <div class="escala-tipo__fila"><span class="escala-tipo__etiqueta">--texto-sm (11px)</span><span class="escala-tipo__ejemplo" style="font-size:var(--texto-sm)">KHAOS define no one</span></div>
+    <div class="escala-tipo__fila"><span class="escala-tipo__etiqueta">--texto-base (12px)</span><span class="escala-tipo__ejemplo" style="font-size:var(--texto-base)">KHAOS define no one</span></div>
+    <div class="escala-tipo__fila"><span class="escala-tipo__etiqueta">--texto-md (13px)</span><span class="escala-tipo__ejemplo" style="font-size:var(--texto-md)">KHAOS define no one</span></div>
+    <div class="escala-tipo__fila"><span class="escala-tipo__etiqueta">--texto-lg (14px)</span><span class="escala-tipo__ejemplo" style="font-size:var(--texto-lg)">KHAOS define no one</span></div>
+    <div class="escala-tipo__fila"><span class="escala-tipo__etiqueta">--texto-xl (16px)</span><span class="escala-tipo__ejemplo" style="font-size:var(--texto-xl)">KHAOS define no one</span></div>
+    <div class="escala-tipo__fila"><span class="escala-tipo__etiqueta">--texto-2xl (20px)</span><span class="escala-tipo__ejemplo" style="font-size:var(--texto-2xl)">KHAOS define no one</span></div>
+    <div class="escala-tipo__fila"><span class="escala-tipo__etiqueta">--texto-icono (22px)</span><span class="escala-tipo__ejemplo" style="font-size:var(--texto-icono)">KHAOS define no one</span></div>
+    <div class="escala-tipo__fila"><span class="escala-tipo__etiqueta">--titulo (26px)</span><span class="escala-tipo__ejemplo" style="font-size:var(--titulo); font-family:var(--fuente-titulos)">KHAOS DEFINE NO ONE</span></div>
+  </div>
+</section>
+
+<section>
+  <h2>Componentes</h2>
+
+  <h3>1. Chip ANTES / DESPUÉS</h3>
+  <div class="demo">
+    <div class="demo__muestra">
+      <span class="chip chip--antes">Antes</span>
+      <span class="chip chip--despues">Después</span>
+    </div>
+    <pre class="demo__codigo">&lt;span class="chip chip--antes"&gt;Antes&lt;/span&gt;
+&lt;span class="chip chip--despues"&gt;Después&lt;/span&gt;</pre>
+  </div>
+
+  <h3>2. Botón tipo píldora</h3>
+  <div class="demo">
+    <div class="demo__muestra">
+      <button class="boton">Botón primario</button>
+      <button class="boton boton--secundario">Botón secundario</button>
+      <button class="boton" disabled>Botón deshabilitado</button>
+    </div>
+    <p style="font-size: var(--texto-sm); color: var(--color-texto-apoyo); margin: 0 0 var(--espacio-3) 0">
+      Pasa el mouse o usa Tab para ver los estados hover / focus-visible.
+    </p>
+    <pre class="demo__codigo">&lt;button class="boton"&gt;Botón primario&lt;/button&gt;
+&lt;button class="boton boton--secundario"&gt;Botón secundario&lt;/button&gt;
+&lt;button class="boton" disabled&gt;Botón deshabilitado&lt;/button&gt;</pre>
+  </div>
+
+  <h3>3. Tarjeta de contenido</h3>
+  <div class="demo">
+    <div class="demo__muestra">
+      <div class="tarjeta" style="width: 260px">
+        <h4 class="tarjeta__titulo">Título de la tarjeta</h4>
+        <p class="tarjeta__texto">Texto de apoyo dentro de una tarjeta de contenido.</p>
+      </div>
+    </div>
+    <pre class="demo__codigo">&lt;div class="tarjeta"&gt;
+  &lt;h4 class="tarjeta__titulo"&gt;Título de la tarjeta&lt;/h4&gt;
+  &lt;p class="tarjeta__texto"&gt;Texto de apoyo…&lt;/p&gt;
+&lt;/div&gt;</pre>
+  </div>
+
+  <h3>4. Encabezado de pantalla (eyebrow + título)</h3>
+  <div class="demo">
+    <div class="demo__muestra" style="width: 100%">
+      <div class="encabezado-pantalla" style="padding: var(--espacio-4); width: 100%; background: var(--color-blanco); border-radius: var(--radio-md)">
+        <p class="encabezado-pantalla__eyebrow">Sección</p>
+        <h4 class="encabezado-pantalla__titulo">Título de pantalla</h4>
+      </div>
+    </div>
+    <pre class="demo__codigo">&lt;div class="encabezado-pantalla"&gt;
+  &lt;p class="encabezado-pantalla__eyebrow"&gt;Sección&lt;/p&gt;
+  &lt;h4 class="encabezado-pantalla__titulo"&gt;Título de pantalla&lt;/h4&gt;
+&lt;/div&gt;</pre>
+  </div>
+
+  <h3>5. Pie de comparación</h3>
+  <div class="demo">
+    <div class="demo__muestra">
+      <p class="pie-comparacion">Así se explica, en texto simple, qué cambió entre el antes y el después de una pantalla.</p>
+    </div>
+    <pre class="demo__codigo">&lt;p class="pie-comparacion"&gt;Así se explica qué cambió…&lt;/p&gt;</pre>
+  </div>
+
+  <h3>6. Barra superior "KHAOS"</h3>
+  <div class="demo">
+    <div class="demo__muestra" style="width: 100%">
+      <div class="barra-superior" style="width: 100%">KHAOS</div>
+    </div>
+    <pre class="demo__codigo">&lt;div class="barra-superior"&gt;KHAOS&lt;/div&gt;</pre>
+  </div>
+
+  <h3>7. Marco de teléfono</h3>
+  <div class="demo demo--telefono">
+    <div class="demo__muestra">
+      <div class="marco-telefono">
+        <div class="marco-telefono__pantalla">
+          <div class="barra-superior">KHAOS</div>
+          <div class="encabezado-pantalla">
+            <p class="encabezado-pantalla__eyebrow">Sección</p>
+            <h4 class="encabezado-pantalla__titulo">Pantalla de ejemplo</h4>
+          </div>
+        </div>
+      </div>
+    </div>
+    <pre class="demo__codigo">&lt;div class="marco-telefono"&gt;
+  &lt;div class="marco-telefono__pantalla"&gt;
+    &lt;div class="barra-superior"&gt;KHAOS&lt;/div&gt;
+    &lt;!-- contenido de la pantalla --&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</pre>
+  </div>
+</section>
+
+</body>
+</html>
