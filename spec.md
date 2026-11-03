@@ -1,21 +1,20 @@
 # spec.md — KHAOS
 
-Blueprint de lo que se va a construir: el flujo, los datos y cada pantalla. Basado en los 15 diseños de `disenos/`, en `storytelling-pitch-khaos.md` y `analisis-figma-khaos.md` del proyecto. Donde el material no dice algo con claridad, queda marcado como `[POR DECIDIR]` en vez de inventarlo.
+Blueprint de lo que se va a construir: el flujo, los datos y cada pantalla. Basado en los 15 diseños de `disenos/`, en `storytelling-pitch-khaos.md` y `analisis-figma-khaos.md` del proyecto, y en las decisiones que tomó el equipo para cerrar los puntos que el material no dejaba claros.
 
 ## Flujo
 
-La barra de navegación inferior es la misma en toda la app (ver `h4-consistencia-estandares.html`): **Inicio, Asesor, Closet, Comunidad, Perfil**, siempre en ese orden y con los mismos íconos. El texto de ese diseño dice que esa barra se repite "en las 6 pantallas de la app", pero solo muestra 5 íconos — cuál es la sexta pantalla de navegación principal no está identificado en el material. `[POR DECIDIR]`
+La barra de navegación inferior es la misma en toda la app (ver `h4-consistencia-estandares.html`): **Inicio, Asesor, Closet, Comunidad, Perfil** — 5 pantallas, siempre en ese orden y con los mismos íconos. (El texto de ese diseño decía "6 pantallas"; el equipo confirmó que fue un error de redacción y que son 5.)
 
 Desde esas 5 pantallas de navegación se llega al resto:
 
-- **Asesor** → el resultado del análisis puede llevar a **Probador** para probarse la prenda recomendada. El punto exacto de ese enlace no está documentado. `[POR DECIDIR]`
-- **Closet** → búsqueda y filtros (`h6-reconocer-recordar.html`).
-- **Comunidad** → **Publicaciones** (`p2`), **"Lugar seguro"** (`p3`) y canales fijados (`h7`). No está documentado si **Inspírate de ropa** (`p5`) es una pestaña dentro de Comunidad o una pantalla independiente. `[POR DECIDIR]`
+- **Asesor** → el resultado del análisis tiene un botón **"Probarme esta prenda"** que lleva directo al **Probador**.
+- **Closet** → búsqueda y filtros (`h6-reconocer-recordar.html`) y, como acción, **Donar ropa — mapa** (`p4`): donar es algo que se hace sobre tu propia ropa, así que vive junto al Closet.
+- **Comunidad** → **Publicaciones** (`p2`), **"Lugar seguro"** (`p3`), canales fijados (`h7`), **Inspírate de ropa** (`p5`, como pestaña dentro de Comunidad) y **Artículos — Historias** (`p1`, el contenido curado tipo revista/redes de Comunidad).
 - **Perfil** → **Membresía** (`h5`) y la vista "Identidad sin descubrir" (`h8`).
 - **Ayuda** (`h10`) aparece de forma contextual junto a la duda (ej. durante el análisis del Asesor), no como ícono de navegación directo.
-- **Artículos — Historias** (`p1`) y **Donar ropa — mapa** (`p4`): el material no especifica desde qué pantalla se entra a estas dos. `[POR DECIDIR]`
 
-Nota: `storytelling-pitch-khaos.md` describe 9 secciones de la app (Home, Asesor, My Closet, Probador, Comunidad, Artículos, Membresía, Perfil, Ayuda) como el recorrido narrativo del pitch, que no es lo mismo que la barra de navegación de 5 íconos vista arriba. Antes de construir, el equipo debería confirmar si esas 9 secciones son pantallas de nivel superior o si varias viven dentro de otra (como Membresía dentro de Perfil). `[POR DECIDIR]`
+Las 9 secciones que describe `storytelling-pitch-khaos.md` (Home, Asesor, My Closet, Probador, Comunidad, Artículos, Membresía, Perfil, Ayuda) son ese mismo recorrido narrativo del pitch: todas viven dentro de las 5 pantallas de navegación de arriba (Artículos y Membresía no son íconos propios, sino contenido dentro de Comunidad y Perfil respectivamente).
 
 ## Datos
 
@@ -31,7 +30,7 @@ Por ahora toda la app usa datos simulados — así lo dice `CLAUDE.md` ("por aho
 - **Membresía**: planes con precio (ej. Pro anual $119.900 COP/año, 33% de ahorro vs. mensual) (`h5`). Hoy: pantalla de confirmación simulada, sin pasarela de pago real.
 - **Perfil**: prendas totales y fecha de miembro ("33 prendas · miembro desde 2024") (`h8`).
 
-**Integraciones de backend** (base de datos real, mapa con geolocalización, pasarela de pago, analizador de fotos): el homework original pide tomarlas de la "intro a backend", un documento que no está en este repositorio ni en el proyecto de Claude. No se inventan aquí — quedan como `[POR DECIDIR]` hasta que el equipo las defina.
+**Integraciones de backend** (base de datos real, mapa con geolocalización, pasarela de pago, analizador de fotos): el equipo decidió que, por ahora, ningún proveedor está elegido todavía — todo sigue Simulado, consistente con `CLAUDE.md` ("por ahora, los datos son simulados"). La base de datos real será Supabase (ya está en `CLAUDE.md`); el proveedor de mapas, la pasarela de pago y la tecnología de análisis de fotos se eligen más adelante, cuando el curso llegue a esa parte.
 
 ## Pantallas
 
@@ -43,7 +42,7 @@ Por ahora toda la app usa datos simulados — así lo dice `CLAUDE.md` ("por aho
 
 **Contenido:** Barra de progreso con paso actual ("Paso 2 de 3 · Detectando prendas") y un aviso de tiempo estimado ("Esto toma unos 10 segundos · no cierres la app").
 
-**Qué funciona de verdad:** Real: la barra de progreso y el texto de paso actual, como interacción visual. Simulado: el análisis en sí — no hay un motor que detecte prendas todavía. Después: conectar esta barra al resultado real del análisis de foto. `[POR DECIDIR]` qué tecnología hace ese análisis.
+**Qué funciona de verdad:** Real: la barra de progreso y el texto de paso actual, como interacción visual. Simulado: el análisis en sí — no hay un motor que detecte prendas todavía. Después: conectar esta barra al resultado real del análisis de foto, con una tecnología que el equipo todavía no elige (se decide cuando se construya esa parte).
 
 **Está lista cuando:** el estado "después" de este diseño está construido en `pages/` usando `.barra-superior` y los tokens de espaciado del design kit, y se ve igual al comparar con `disenos/h1-estado-sistema-visible.html`.
 
@@ -63,11 +62,11 @@ Por ahora toda la app usa datos simulados — así lo dice `CLAUDE.md` ("por aho
 
 **Archivo de diseño:** `disenos/h3-control-libertad.html`
 
-**Objetivo:** Esta pantalla existe para que la persona que se está probando una prenda pueda salir, deshacer o guardar en cualquier momento, sin quedar atrapada. Sabemos que funciona si nadie necesita cerrar la app a la fuerza para salir del Probador.
+**Objetivo:** Esta pantalla existe para que la persona que se está probando una prenda pueda salir, deshacer o guardar en cualquier momento, sin quedar atrapada. Sabemos que funciona si nadie necesita cerrar la app a la fuerza para salir del Probador. Se entra aquí desde el **Asesor**, con el botón "Probarme esta prenda" en el resultado del análisis.
 
 **Contenido:** Botones siempre visibles de "Cancelar", "Guardar look" y "↺ Deshacer última prenda", sobre la foto de la persona con la prenda superpuesta.
 
-**Qué funciona de verdad:** Real: los tres controles (cancelar, guardar, deshacer) como interacción de interfaz. Simulado: la superposición de la prenda sobre la foto — hoy no hay un motor de prueba virtual real. Después: conectar con el análisis de foto del Asesor para la superposición real. `[POR DECIDIR]` qué tecnología hace esa superposición.
+**Qué funciona de verdad:** Real: los tres controles (cancelar, guardar, deshacer) como interacción de interfaz. Simulado: la superposición de la prenda sobre la foto — hoy no hay un motor de prueba virtual real. Después: conectar con el análisis de foto del Asesor para la superposición real, con una tecnología que el equipo todavía no elige.
 
 **Está lista cuando:** los tres controles están siempre visibles en pantalla, sin necesitar scroll ni menú adicional para encontrarlos.
 
@@ -91,7 +90,7 @@ Por ahora toda la app usa datos simulados — así lo dice `CLAUDE.md` ("por aho
 
 **Contenido:** Resumen del plan (Pro anual, $119.900 COP/año, 33% de ahorro vs. mensual) con botones "Cancelar" y "Confirmar pago" separados del botón que inicia la compra.
 
-**Qué funciona de verdad:** Real: el paso de confirmación como flujo de interfaz. Simulado: el cobro en sí — no hay pasarela de pago conectada. Después: conectar con una pasarela de pago real. `[POR DECIDIR]` cuál.
+**Qué funciona de verdad:** Real: el paso de confirmación como flujo de interfaz. Simulado: el cobro en sí — no hay pasarela de pago conectada. Después: conectar con una pasarela de pago real; el equipo todavía no elige cuál.
 
 **Está lista cuando:** nunca es posible pagar con un solo toque: siempre hay un paso de resumen + confirmación antes de cualquier cobro, simulado o real.
 
@@ -139,7 +138,7 @@ Por ahora toda la app usa datos simulados — así lo dice `CLAUDE.md` ("por aho
 
 **Contenido:** Mensaje en lenguaje humano ("No pudimos detectar tu rostro con claridad"), sugerencias concretas ("Busca un lugar con más luz", "Quítate lentes o accesorios que cubran tu cara") y un botón "Reintentar".
 
-**Qué funciona de verdad:** Real: el formato del mensaje de error y el botón de reintentar. Simulado: la detección de rostro en sí. Después: conectar con el motor real de detección y sus posibles códigos de error. `[POR DECIDIR]` cuáles son esos códigos.
+**Qué funciona de verdad:** Real: el formato del mensaje de error y el botón de reintentar. Simulado: la detección de rostro en sí, con un único mensaje de error fijo. Después: conectar con el motor real de detección; sus códigos de error específicos se definen cuando se elija esa tecnología (ver sección Datos).
 
 **Está lista cuando:** ningún error del Asesor se muestra como código técnico crudo: siempre hay explicación + sugerencia + salida.
 
@@ -159,11 +158,11 @@ Por ahora toda la app usa datos simulados — así lo dice `CLAUDE.md` ("por aho
 
 **Archivo de diseño:** `disenos/p1-articulos-historias.html`
 
-**Objetivo:** Esta pantalla existe para que la persona reconozca de qué trata una historia de un vistazo, sin leer título por título. Sabemos que funciona si alguien identifica el tema de una historia antes de abrirla, solo con la miniatura.
+**Objetivo:** Esta pantalla existe para que la persona reconozca de qué trata una historia de un vistazo, sin leer título por título. Sabemos que funciona si alguien identifica el tema de una historia antes de abrirla, solo con la miniatura. Se entra aquí desde **Comunidad**, como su contenido curado tipo revista.
 
 **Contenido:** Miniaturas tipo "historia" (como Instagram o Vogue) por tema (Techwear, Streetwear, Dazed, GQ) con vista previa al abrir.
 
-**Qué funciona de verdad:** Real: el formato de miniatura + vista previa, como interacción. Simulado: el contenido editorial detrás de cada historia — son ejemplos. Después: conectar con una fuente real de contenido curado. `[POR DECIDIR]` cuál.
+**Qué funciona de verdad:** Real: el formato de miniatura + vista previa, como interacción. Simulado: el contenido editorial detrás de cada historia — son ejemplos. Después: conectar con una fuente real de contenido curado; el equipo todavía no elige cuál.
 
 **Está lista cuando:** cada miniatura se puede abrir y muestra una vista previa antes del contenido completo.
 
@@ -187,7 +186,7 @@ Por ahora toda la app usa datos simulados — así lo dice `CLAUDE.md` ("por aho
 
 **Contenido:** Reglas en tarjetas cortas y lenguaje cotidiano: "Sin seguidores. Sin likes públicos.", "Nadie ve tu nombre real si no quieres.", "Reportas algo en un toque."
 
-**Qué funciona de verdad:** Real: el formato de tarjetas cortas. Simulado: el botón de reporte — hoy no está conectado a un sistema de moderación real. Después: conectar el reporte a un proceso de moderación real. `[POR DECIDIR]` cómo funciona ese proceso.
+**Qué funciona de verdad:** Real: el formato de tarjetas cortas. Simulado: el botón de reporte — hoy no está conectado a un sistema de moderación real. Después: conectar el reporte a un proceso de moderación real; el equipo todavía no define cómo funciona ese proceso.
 
 **Está lista cuando:** las reglas se leen completas sin necesitar scroll largo ni un documento aparte.
 
@@ -195,11 +194,11 @@ Por ahora toda la app usa datos simulados — así lo dice `CLAUDE.md` ("por aho
 
 **Archivo de diseño:** `disenos/p4-donar-ropa-mapa.html`
 
-**Objetivo:** Esta pantalla existe para que la persona que quiere donar ropa sepa qué punto está abierto y qué tan cerca le queda, antes de ir. Sabemos que funciona si alguien elige un punto de donación sin tener que llamar o buscar el horario por fuera de la app.
+**Objetivo:** Esta pantalla existe para que la persona que quiere donar ropa sepa qué punto está abierto y qué tan cerca le queda, antes de ir. Sabemos que funciona si alguien elige un punto de donación sin tener que llamar o buscar el horario por fuera de la app. Se entra aquí desde **Closet**, como una acción sobre tu propia ropa.
 
 **Contenido:** Estado de búsqueda ("Buscando puntos cerca de ti…"), marcadores en un mapa y una tarjeta por punto con dirección, si está abierto, distancia y horario de cierre.
 
-**Qué funciona de verdad:** Real: el formato de la tarjeta de punto (dirección + estado + distancia + horario). Simulado: la ubicación de la persona, el mapa y los puntos — son de ejemplo, no hay geolocalización ni mapa real conectados todavía. Después: conectar con un servicio de mapas real y con una lista real de puntos de donación. `[POR DECIDIR]` cuál proveedor de mapas y quién mantiene la lista de puntos.
+**Qué funciona de verdad:** Real: el formato de la tarjeta de punto (dirección + estado + distancia + horario). Simulado: la ubicación de la persona, el mapa y los puntos — son de ejemplo, no hay geolocalización ni mapa real conectados todavía. Después: conectar con un servicio de mapas real y con una lista real de puntos de donación; el equipo todavía no elige el proveedor de mapas ni quién mantiene la lista de puntos.
 
 **Está lista cuando:** cada punto mostrado indica siempre si está abierto, qué tan lejos queda y hasta qué hora.
 
@@ -207,10 +206,10 @@ Por ahora toda la app usa datos simulados — así lo dice `CLAUDE.md` ("por aho
 
 **Archivo de diseño:** `disenos/p5-inspirate-ropa.html`
 
-**Objetivo:** Esta pantalla existe para que la persona vea la prenda como contenido principal, sin que tags, contadores y publicidad le tapen la foto. Sabemos que funciona si la prenda es lo primero y lo más grande que se ve en la pantalla.
+**Objetivo:** Esta pantalla existe para que la persona vea la prenda como contenido principal, sin que tags, contadores y publicidad le tapen la foto. Sabemos que funciona si la prenda es lo primero y lo más grande que se ve en la pantalla. Es una pestaña dentro de **Comunidad**, no una pantalla de navegación aparte.
 
 **Contenido:** Foto a pantalla completa con una sola etiqueta visible (ej. "#capsula"), sin contadores de likes/comentarios ni banners de publicidad.
 
-**Qué funciona de verdad:** Real: el formato de foto a pantalla completa + una sola etiqueta. Simulado: el origen de las fotos — son de ejemplo. Después: conectar con un catálogo real de prendas o publicaciones. No está documentado si esta pantalla es parte de Comunidad o independiente. `[POR DECIDIR]`
+**Qué funciona de verdad:** Real: el formato de foto a pantalla completa + una sola etiqueta. Simulado: el origen de las fotos — son de ejemplo. Después: conectar con un catálogo real de prendas o publicaciones.
 
 **Está lista cuando:** nunca aparece más de una etiqueta sobre la foto, y no hay publicidad ni contadores compitiendo con la imagen.
