@@ -43,5 +43,6 @@ Definidos en `css/components.css` (usan solo variables de `css/tokens.css`). Ver
 - `.pie-comparacion`: texto explicativo bajo un mockup. Uso: `<p class="pie-comparacion">Texto…</p>`.
 - `.boton`, `.boton--secundario`: botón píldora (tiene estados hover, focus-visible y disabled). Uso: `<button class="boton">Acción</button>`.
 - `.tarjeta`, `.tarjeta__titulo`, `.tarjeta__texto`: tarjeta de contenido genérica. Uso: `<div class="tarjeta"><h4 class="tarjeta__titulo">Título</h4><p class="tarjeta__texto">Texto</p></div>`.
+- `.barra-navegacion`, `.barra-navegacion__item`, `.barra-navegacion__item--activo`, `.barra-navegacion__icono`, `.barra-navegacion__etiqueta`: la barra de navegación inferior de 5 ítems (Inicio, Asesor, Closet, Comunidad, Perfil), igual en todas las pantallas. Marca el ítem activo con `--activo`. Uso: `<nav class="barra-navegacion"><a href="index.html" class="barra-navegacion__item barra-navegacion__item--activo"><span class="barra-navegacion__icono"></span><span class="barra-navegacion__etiqueta">Inicio</span></a>...</nav>`.
 
 Si necesitas un componente o variante que no está aquí, no lo inventes directo en una pantalla: primero se agrega a `css/components.css` y a `componentes.html`, y después se usa (regla 3 de arriba).

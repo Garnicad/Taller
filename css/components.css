@@ -170,6 +170,60 @@
   line-height: 1.4;
 }
 
+/* 8. Barra de navegación inferior
+   NUEVO: agregado durante Construir y publicar (Paso 6). La auditoría del
+   jueves solo miró las 15 pantallas de disenos/ y no incluyó este patrón.
+   Viene de h4-consistencia-estandares.html (su estado "DESPUÉS"): 5 ítems
+   fijos, mismo orden e íconos siempre — Inicio, Asesor, Closet, Comunidad,
+   Perfil. */
+
+.barra-navegacion {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: var(--espacio-3) var(--espacio-2);
+  border-top: 1px solid var(--color-gris-claro);
+  background: var(--color-blanco);
+}
+
+.barra-navegacion__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--espacio-1);
+  text-decoration: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.barra-navegacion__icono {
+  width: var(--espacio-5);
+  height: var(--espacio-5);
+  border-radius: 50%;
+  background: var(--color-gris-medio);
+}
+
+.barra-navegacion__etiqueta {
+  font-family: var(--fuente-texto);
+  font-size: var(--texto-micro);
+  color: var(--color-texto-apoyo);
+}
+
+.barra-navegacion__item--activo .barra-navegacion__icono {
+  background: var(--color-secundario);
+}
+
+.barra-navegacion__item--activo .barra-navegacion__etiqueta {
+  color: var(--color-marino);
+  font-weight: var(--peso-fuerte);
+}
+
+.barra-navegacion__item:focus-visible {
+  outline: 2px solid var(--color-secundario-vivo);
+  outline-offset: 2px;
+}
+
 /* Consideración mobile: a 375px de ancho, marco-telefono y tarjeta usan
    padding y font-size en variables (no px sueltos), así que se achican
    de forma proporcional sin reglas extra. */
