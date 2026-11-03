@@ -13,14 +13,14 @@ Jóvenes que sienten presión social por cómo se ven o visten, y quieren un esp
 ## Equipo
 
 - Thomas Garnica — [rol pendiente de confirmar]
-- Mariana — [rol pendiente de confirmar]
-- Andrés — [rol pendiente de confirmar]
-- Paula — [rol pendiente de confirmar]
+- Mariana — Diseñadora UX y UI
+- Andrés — Storyteller y Programador
+- Paula — CEO
 
 ## Links
 
 - App publicada: pendiente
-- Repositorio del proceso: [POR COMPLETAR]
+- Repositorio del proceso: https://github.com/Garnicad/Kahos
 
 ## Cómo está organizado este repo
 
