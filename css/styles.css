@@ -1,0 +1,44 @@
+/* Estilos generales de las pantallas de KHAOS.
+   Layout compartido (no componentes): el resto del look viene de
+   css/tokens.css y css/components.css. Mobile-first: se ve bien desde
+   375px de ancho y crece en computador. */
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: var(--color-fondo);
+  font-family: var(--fuente-texto), var(--fuente-texto-respaldo);
+}
+
+main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Envoltura para contenido que no ocupa el ancho completo (ej. tarjetas
+   sueltas dentro de main), con el mismo margen lateral que ya usa
+   encabezado-pantalla. */
+.contenido {
+  padding: 0 var(--espacio-pantalla-h);
+}
+
+/* En computador, el contenido no se estira a todo el ancho: se centra
+   en una columna del tamaño de un teléfono, como el resto del kit. */
+@media (min-width: 480px) {
+  body {
+    max-width: 480px;
+    margin: 0 auto;
+    box-shadow: 0 0 0 1px var(--color-gris-claro);
+  }
+}

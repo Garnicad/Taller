@@ -34,6 +34,18 @@ Por ahora toda la app usa datos simulados — así lo dice `CLAUDE.md` ("por aho
 
 ## Pantallas
 
+### 0. Inicio
+
+**Archivo de diseño:** ninguno en `disenos/` (no existe un diseño de heurísticas para esta pantalla). Contenido tomado de `storytelling-pitch-khaos.md`, fila "Home" de la tabla de pantallas — es el único material no inventado disponible.
+
+**Objetivo:** Esta pantalla existe para que la persona que abre la app por primera vez entienda la propuesta de KHAOS antes de que se le pida nada. Sabemos que funciona si nadie tiene que llenar un cuestionario de identidad (género, estilo, tribu) para poder entrar.
+
+**Contenido:** El lema "La moda clasifica. Nosotros no." / "Define no one." como mensaje principal, y acceso directo a la navegación — sin preguntas de clasificación antes de entrar.
+
+**Qué funciona de verdad:** Real: toda la pantalla (es solo mensaje + navegación, no depende de datos ni de backend).
+
+**Está lista cuando:** se ve igual en computador y en 375px de ancho, y no pide ningún dato antes de mostrar la navegación principal.
+
 ### 1. Asesor — mientras analiza la foto
 
 **Archivo de diseño:** `disenos/h1-estado-sistema-visible.html`
