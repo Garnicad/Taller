@@ -12,9 +12,8 @@ Jóvenes que sienten presión social por cómo se ven o visten, y quieren un esp
 
 ## Equipo
 
-- Thomas Garnica — [rol pendiente de confirmar]
+- Thomas  — Storyteller y Programador
 - Mariana — Diseñadora UX y UI
-- Andrés — Storyteller y Programador
 - Paula — CEO
 
 ## Links
